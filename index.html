@@ -1,0 +1,101 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Galeri Aku & Pacarku 💖</title>
+  <style>
+    body {
+      background: #fff0f5;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+    h1 {
+      color: #d63384;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      max-width: 900px;
+      margin: 20px auto;
+    }
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    footer {
+      margin-top: 20px;
+      color: #888;
+    }
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: url('https://cdn-icons-png.flaticon.com/512/833/833472.png') no-repeat center/contain;
+      animation: floatUp 5s linear infinite;
+    }
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-600px) scale(1.5);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>SI ALYA💖</h1>
+  
+  <div class="gallery">
+    <img src="Screenshot_2025-06-10-01-23-21-368_com.miui.gallery-edit.jpg" alt="Foto 1">
+    <img src="/Screenshot_2025-06-10-01-22-11-552_com.miui.gallery-edit.jpg" alt="Foto 2">
+    <img src="/Screenshot_2025-06-10-01-21-53-811_com.miui.gallery-edit.jpg" alt="Foto 3">
+    <img src="/Screenshot_2025-06-10-01-20-27-561_com.miui.gallery-edit.jpg" alt="Foto 4">
+    <img src="/Screenshot_2025-06-10-01-18-55-764_com.miui.gallery-edit.jpg" alt="Foto 5">
+    <!-- Tambah foto lagi kalau mau -->
+  </div>
+
+  <!-- Musik otomatis -->
+  <audio autoplay loop>
+    <source src="/tiktokio.com_0geieL8WE5y03IHm1VVr.mp3" type="audio/mpeg">
+    Browser kamu tidak mendukung audio tag.
+  </audio>
+
+ <audio id="musik" loop>
+  <source src="/tiktokio.com_0geieL8WE5y03IHm1VVr.mp3" type="audio/mpeg">
+</audio>
+<button onclick="document.getElementById('musik').play()">Play Musik Romantis 🎵</button>
+
+  <footer>© 2025 Galeri Cinta Kita 💕</footer>
+
+  <!-- Love terbang -->
+  <script>
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + "vw";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 5000); // hilang setelah 5 detik
+    }
+
+    setInterval(createHeart, 300); // muncul love tiap 0.3 detik
+  </script>
+</body>
+</html>
